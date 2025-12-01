@@ -15,8 +15,9 @@ spec:
   # create service selector labels here
   # hint: should match the deployment's labels
   selector:
-    app: wordpress
-    tier: mysql
+    matchLabels: 
+      app: wordpress
+      tier: mysql
   ##
 ---
 apiVersion: v1
@@ -100,7 +101,7 @@ spec:
         ##
         volumeMounts:
         - name: mysql-data
-        mountPath: /var/lib/mysql
+          mountPath: /var/lib/mysql
 
 
       ##
@@ -109,8 +110,8 @@ spec:
       ##
       volumes:
       - name: mysql-data
-      persistentVolumeClaim: 
-        claimName: mysql-pv-claim
+        persistentVolumeClaim: 
+          claimName: mysql-pv-claim
 
 ---
 ##

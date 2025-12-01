@@ -15,8 +15,9 @@ spec:
   # hint: match the deployment's labels (app: wordpress, tier: frontend)
   ##
   selector:
-    app: wordpress
-    tier: frontend
+    matchLabels: 
+      app: wordpress
+      tier: frontend
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -93,7 +94,7 @@ spec:
         # add volumeMounts inside the container spec above
         # mount path: /var/www/html
         ##
-        volumesMounts:
+        volumeMounts:
         - name: wordpress-data
           mountPath:  /var/www/html
 
