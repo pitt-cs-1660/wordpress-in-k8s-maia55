@@ -15,9 +15,8 @@ spec:
   # create service selector labels here
   # hint: should match the deployment's labels
   selector:
-    matchLabels: 
-      app: wordpress
-      tier: mysql
+    app: wordpress
+    tier: mysql
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -44,8 +43,8 @@ spec:
   ##
   selector: 
     matchLabels:
-    app: wordpress
-    tier: mysql 
+      app: wordpress
+      tier: mysql 
   template:
     ##
     # create pod metadata labels here (match the selectorLabels)

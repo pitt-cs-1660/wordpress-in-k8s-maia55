@@ -15,7 +15,6 @@ spec:
   # hint: match the deployment's labels (app: wordpress, tier: frontend)
   ##
   selector:
-    matchLabels: 
       app: wordpress
       tier: frontend
 ---
